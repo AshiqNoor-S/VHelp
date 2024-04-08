@@ -1,7 +1,9 @@
 import React from 'react'
 
-export const Laundry = () => {
+const Laundry = () => {
   return (
     <div>Laundry</div>
   )
 }
+
+export default Laundry;
