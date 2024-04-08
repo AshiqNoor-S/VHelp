@@ -1,7 +1,9 @@
 import React from 'react'
 
-export const Mess = () => {
+const Mess = () => {
   return (
     <div>Mess</div>
   )
 }
+
+export default Mess;
