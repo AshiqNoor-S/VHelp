@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/homePage/Home';
 import Foodpark from './components/foodpark/Foodpark';
 import Mess from './components/mess/Mess';
@@ -9,15 +9,15 @@ import LaundryData from './components/laundry/LaundryData';
 function App() {
   return (
     <BrowserRouter>
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/foodpark" element={<Foodpark />} />
-        <Route path="/laundry" element={<Laundry />} />
-        <Route path="/mess" element={<Mess />} />
+      <div className="App" style={{ background: '#C2D9FF' }}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/foodpark" element={<Foodpark />} />
+          <Route path="/laundry" element={<Laundry />} />
+          <Route path="/mess" element={<Mess />} />
         <Route path="/laundry-data" element={<LaundryData/>} />
-      </Routes>
-        <Footer/>
+        </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   );
