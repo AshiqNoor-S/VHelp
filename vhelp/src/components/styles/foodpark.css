@@ -1,0 +1,58 @@
+.mealselect{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.addedItems{
+    margin-bottom: 20px;
+}
+
+.additem{
+    display: flex;
+    flex-direction: row;
+}
+
+/* foodpark.css */
+
+/* Style the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+  }
+  
+  /* Style table header */
+  th {
+    background-color: #f2f2f2;
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  tr {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  td {
+    padding: 8px;
+  }
+  
+  button {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #d62c1a;
+  }
+  
+@media (max-width: 500px) {
+    table{
+        font-size: 12px;
+    }
+}

@@ -33,6 +33,7 @@
     width: 100%;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-bottom: 30px;
 }
 
 .laundry__card{
@@ -43,7 +44,7 @@
     align-items: center;
     justify-content: center;
     padding: 10px;
-    background-color: #C2D9FF;
+    background-color: #8E8FFA;
     border-radius: 10px;
     margin: 10px
 }
@@ -61,7 +62,7 @@
 }
 
 .laundry__card:hover{
-    background-color: #8E8FFA;
+    background-color: #7752FE;
 }
 
 @media (max-width: 900px) {
