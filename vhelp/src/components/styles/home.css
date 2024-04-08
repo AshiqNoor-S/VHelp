@@ -1,13 +1,24 @@
 .hero{
     background: #C2D9FF;
-    height: 100vh;
 }
+
+.hero-text-1 {
+    color: #190482;
+    font: bold 20px sans-serif;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
 
 .hero-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    flex-direction: column;
   }
   
   .hero-text {
@@ -32,13 +43,24 @@
     max-width: 100%; /* Make image responsive */
     height: auto;
   }
-  
 
+   
+  .cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center ;
+  }
+
+  .services-txt{
+    text-align: center;
+  }
+  
 .Services{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 @media (max-width: 880px){
@@ -54,4 +76,5 @@
     .Services{
         flex-direction: column;
     }
+
 }

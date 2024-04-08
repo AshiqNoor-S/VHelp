@@ -1,12 +1,17 @@
 import React from "react";
 import "../styles/home.css";
 import Nav from "../header/Nav.jsx";
-import Card from "./Card.jsx";
+import Servicetile from "./Servicetile.jsx";
+import Servicetileleft from "./Servicetileleft.jsx";
 
 const Home = () => (
     <div>
         <Nav/>
         <div className="hero">
+            <div className="hero-text-1">
+                <h1>VTOP translates to "VIT on TOP"<br/>
+                A digital initiative by the institute</h1>
+            </div>
             <div className="hero-section">
                 <div className="hero-text">
                     <h1>Welcome to V<span>Help</span></h1>
@@ -23,9 +28,9 @@ const Home = () => (
                 <h1>Services</h1>
             </div>
             <div className="Services">
-                <Card/>
-                <Card/>
-                <Card/>
+                <Servicetile/>
+                <Servicetileleft/>
+                <Servicetile/>
             </div>
         </div>
         
