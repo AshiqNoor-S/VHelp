@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { auth } from "../../firebase-config";
 import { Navigate } from 'react-router-dom';
+import "../styles/Login.css"; // Import the CSS file
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -35,26 +36,32 @@ const Login = () => {
     }
 
     return (
-        <div>
-            <h2>Login</h2>
-            <form onSubmit={handleLogin}>
-                <input
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                />
-                <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
-                <button type="submit">Login</button>
-            </form>
-            <button onClick={handleGoogleLogin}>Login with Google</button>
+        <div className="login-container">
+            <div className="form">
+                <h2>Login</h2>
+                <form className="login-form" onSubmit={handleLogin}>
+                    <input
+                        className="login-input"
+                        type="email"
+                        placeholder="Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                    />
+                    <input
+                        className="login-input"
+                        type="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                    <button className="login-button" type="submit">Login</button>
+                </form>
+                <p className="or-btn">or</p>
+                <button className="google-login-button" onClick={handleGoogleLogin}>Login with Google</button>
+            </div>
+            
         </div>
     );
 };

@@ -1,0 +1,62 @@
+/* MessChart.css */
+.mess-chart {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    flex-direction: row;
+}
+
+.col{
+    padding:2rem;
+}
+
+
+.mess-card {
+    background-color: #f8f9fa;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: .8rem;
+    width: 15rem;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 4px 28px 18px rgba(0, 0.4, 0.8, 0.1);
+}
+
+.mess-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+}
+
+.mess-card p {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+
+@media (max-width: 992px) {
+    .row{
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .row{
+        flex-direction:column;
+    }
+}
+
+

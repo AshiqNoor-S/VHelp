@@ -35,10 +35,12 @@ const SignUp = () => {
     }
 
     return (
-        <div>
+        <div className="login-container"> 
+            <div className="form">
             <h2>Sign Up</h2>
-            <form onSubmit={handleSignUp}>
+            <form className="login-form" onSubmit={handleSignUp}>
                 <input
+                    className="login-input"
                     type="email"
                     placeholder="Email"
                     value={email}
@@ -46,15 +48,18 @@ const SignUp = () => {
                     required
                 />
                 <input
+                    className="login-input"
                     type="password"
                     placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
                 />
-                <button type="submit">Sign Up</button>
-            </form>
-            <button onClick={handleGoogleSignUp}>Sign Up with Google</button>
+                <button className="login-button" type="submit">Sign Up</button>
+                </form>
+                <p className="or-btn">or</p>
+                <button className="google-login-button"  onClick={handleGoogleSignUp}>Sign Up with Google</button>
+            </div>
         </div>
     );
 };
