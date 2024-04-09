@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/table.css';
 import { Link } from 'react-router-dom';
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../../firebase-config';
 
 const Table = () => {
   const [statuses, setStatuses] = useState([
@@ -13,18 +15,43 @@ const Table = () => {
     setStatuses(newStatuses);
   }
 
+  const [menuData, setMenuData] = useState([]);
+  const [loading, setLoading] = useState(true); 
+
+  useEffect(() => {
+    setLoading(false); // Stop loading
+    console.log(menuData);
+  }, [menuData]);
+    
+  useEffect(() => {
+    const fetchMenuData = async () => {
+      setLoading(true); // Begin loading
+      try {
+        const querySnapshot = await getDocs(collection(db, 'orders'));
+        const items = querySnapshot.docs.map(doc => doc.data());
+        setMenuData(items);
+        console.log(menuData);
+      } catch (error) {
+        console.error("Failed to fetch menu data:", error);
+      }
+    };
+    fetchMenuData();
+  }, []);
+
+  if (loading) return <div>Loading...</div>; // Display loading indicator
+
   return (
     <div className="container-fluid" style={{ marginTop: '10px' }}>
-        <div className='heading'>
-            <h1>Current Orders</h1>
-        </div>
+      <div className='heading'>
+        <h1>Current Orders</h1>
+      </div>
       <table>
         <thead>
           <tr>
-            <th>Registration No</th>
+            {/* <th>Registration No</th>
             <th>Name</th>
             <th>Room No</th>
-            <th>Phone No</th>
+            <th>Phone No</th> */}
             <th>Order Id</th>
             <th>Ordered Item</th>
             <th>Time of Order</th>
@@ -34,16 +61,26 @@ const Table = () => {
           </tr>
         </thead>
         <tbody>
-          {[...Array(4)].map((_, index) => (
+          {menuData.length > 0 && menuData.map((item, index) => (
             <tr key={index}>
-              <td>21BCE1845</td>
-              <td>Ashiq</td>
-              <td>115</td>
-              <td>038979824</td>
-              <td>123S</td>
-              <td>Burger</td>
-              <td>8:00 pm</td>
-              <td>Non-veg</td>
+              {/* <td>{item.regno}</td>
+              <td>{item.name}</td> */}
+              <td>{item.orderId}</td>
+              <td>
+                <ul className='orderList'>
+                  {item.items.map((orderedItem, idx) => (
+                    <li key={idx}>{orderedItem.name}</li>
+                  ))}
+                </ul>
+              </td>
+              <td>{item.timestamp.toDate().toLocaleString()}</td>
+              <td>
+                <ul className='orderList'>
+                  {item.items.map((orderedItem, idx) => (
+                    <li key={idx}>{orderedItem.category}</li>
+                  ))}
+                </ul>
+              </td>
               <td>{statuses[index]}</td>
               <td>
                 <button onClick={() => handleToggleStatus(index)}>

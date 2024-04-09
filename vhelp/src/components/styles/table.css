@@ -21,6 +21,20 @@
     margin: 2rem;
 }
 
+.orderList{
+  all:unset;
+  display: flex;
+  justify-content: center;
+  gap:.3rem;
+  font-weight: 800;
+  flex-direction: column;
+}
+
+.orderList li{
+  list-style:none;
+  all:unset;
+}
+
 table {
   border-spacing: 1px;
   border-collapse: collapse;

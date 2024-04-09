@@ -25,7 +25,7 @@ function LaundryCard({serviceUrl, serviceName}) {
     serviceRoute = "/closelost";
   }
   else if (serviceName === 'Laundry Information'){
-    serviceRoute = "/closelost";
+    serviceRoute = "/laundry-data";
   }
 
   return (

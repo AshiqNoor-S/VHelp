@@ -15,29 +15,32 @@ const Laundry = () => {
 
   const [currentUserEmail, setCurrentUserEmail] = useState('');
   const [isAdmin, setIsAdmin] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const checkAdminOrNot = async () => {
       if (auth.currentUser) {
         const querySnapshot = await getDocs(collection(db, 'admin'));
         const documents = querySnapshot.docs.map(doc => doc.data());
-        console.log(documents);
-        const adminEmails = documents.map(doc => doc.email); // Assuming email is a field in your 'admin' documents
-        console.log(adminEmails);
+        const adminEmails = documents.map(doc => doc.email);
         if (adminEmails.includes(auth.currentUser.email)) {
           setIsAdmin(true);
-          console.log("he")
         }
       }
+      setLoading(false);
     };
+
     checkAdminOrNot();
 
     if (auth.currentUser) {
       setCurrentUserEmail(auth.currentUser.email);
     }
-    console.log("hello")
-    console.log(isAdmin)
-  }, [isAdmin]);
+
+    console.log("hello");
+    console.log(isAdmin);
+  }, []);
+
+  if (loading) return <div>Loading...</div>;
 
   return (
     <div className='laundry'>
@@ -47,7 +50,7 @@ const Laundry = () => {
           <div>Tired of the uncertainity of the laundry process? Tired of going to chotta Dhobhi just to realise it is the wrong day? Worry no more, we got it covered for you.</div>
         </div>
         <div className='heroImage'>
-          <img src={HeroImage}style={{"width":"100%"}}/>
+          <img src={HeroImage} style={{"width":"100%"}}/>
         </div>
       </div>
       <div className='services'>
