@@ -24,6 +24,6 @@
 
 .ind-tiles img {
     max-width: 100%;
-    height: auto;
+    height: 40vh;
     border-radius: 5px;
 }
