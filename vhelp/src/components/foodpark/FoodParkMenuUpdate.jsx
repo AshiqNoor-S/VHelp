@@ -56,10 +56,10 @@ function FoodParkMenuUpdate() {
   };
 
   return (
-    <div>
+    <div className='food-park-menu-update'>
       <div className='mealselect'>
-        <div> Select Meal type: </div>
-        <select value={selectedMeal} onChange={handleMealChange}>
+        <div className='mealtypetext'> Select Meal type: </div>
+        <select value={selectedMeal} onChange={handleMealChange} className='mealtypeinput'>
           <option value="Breakfast">Breakfast</option>
           <option value="Lunch">Lunch</option>
           <option value="Snacks">Snacks</option>
@@ -67,26 +67,31 @@ function FoodParkMenuUpdate() {
         </select>
       </div>
 
-      <div>
-        <div>Add Menu Items: </div>
+      <div className='additemmenu'>
+        <div className='additemmenutext'>Add Menu Items: </div>
         <div className='additem'>
           <input
             value={inputValue}
             onChange={handleInputChange}
             placeholder="Type to search foods..."
+            className='additeminput'
           />
-          <div onClick={addItemMenu}>Add Item</div>
+          <div onClick={addItemMenu} className='additembutton'>Add Item</div>
         </div>
-        <div>
-          {filteredFoods.map((food, index) => (
-            <div key={index} onClick={() => handleFoodClick(food)}>
-              {food.name}
-            </div>
-          ))}
-        </div>
+        {
+        (filteredFoods.length > 0 && inputValue.length > 0)
+          && 
+          <div className='filteredfoods'>
+            {filteredFoods.map((food, index) => (
+              <div key={index} onClick={() => handleFoodClick(food)} className='filteredfood'>
+                {food.name}
+              </div>
+            ))}
+          </div>
+        }
       </div>
       <div className='addedItems'>
-        <div>Added Items:</div>
+        <div className='addeditemstext'>Added Items:</div>
         {addedItems.length === 0 ? (
           <div>No items are added</div>
         ) : (
