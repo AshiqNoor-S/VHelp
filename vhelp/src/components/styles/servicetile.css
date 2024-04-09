@@ -32,6 +32,8 @@
   
   .service-tile__text h3 {
     margin-top: 0;
+    color: #fff;
+    font: bold 25px sans-serif;
   }
   
   .service-tile__text p {
@@ -46,6 +48,7 @@
     border-radius: 5px;
     text-decoration: none;
     display: inline-block;
+    margin-top:2vh;
   }
   
   .btn-primary:hover {

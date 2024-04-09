@@ -1,0 +1,172 @@
+/* sets */
+
+/* up to 360px */
+@gl-ms: screen and (max-width: 23.5em);
+
+/* up to 568px */
+@gl-xs: screen and (max-width: 35.5em);
+
+/* max 768px */
+@gl-sm: screen and (max-width: 48em);
+
+/* max 1024px */
+@gl-md: screen and (max-width: 64em);
+
+/* max 1280px */
+@gl-lg: screen and (max-width: 80em);
+
+/* table style */
+table {
+  border-spacing: 1px;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 98%;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 20vh;
+}
+
+.heading h1{
+    text-align: center;
+}
+
+table * {
+  position: relative;
+}
+
+table td,
+table th {
+  padding: 10px; /* Add padding to create spacing */
+}
+
+table thead tr {
+  height: 60px;
+  background: #8E8FFA;
+  font-size: 16px;
+}
+
+table tbody tr {
+  height: 48px;
+  border-bottom: 1px solid #E3F1D5;
+}
+
+table tbody tr:last-child {
+  border: 0;
+}
+
+table button {
+  padding: 5px 10px;
+  background-color: #337ab7;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+table button:hover {
+  background-color: #23527c;
+}
+
+table td,
+table th {
+  text-align: left;
+}
+
+table td.l,
+table th.l {
+  text-align: right;
+}
+
+table td.c,
+table th.c {
+  text-align: center;
+}
+
+table td.r,
+table th.r {
+  text-align: center;
+}
+
+/* media query for small screens */
+@media screen and (max-width: 35.5em) {
+  table {
+    display: block;
+    max-width: none;
+    width: 100%;
+  }
+
+  table *,
+  table tr,
+  table td,
+  table th {
+    display: block;
+  }
+
+  table thead {
+    display: none;
+  }
+
+  table tbody tr {
+    height: auto;
+    padding: 8px 0;
+  }
+
+  table td {
+    padding-left: 45%;
+    margin-bottom: 12px;
+  }
+
+  table td:last-child {
+    margin-bottom: 0;
+  }
+
+  table td:before {
+    position: absolute;
+    font-weight: 700;
+    width: 40%;
+    left: 10px;
+    top: 0;
+  }
+
+  table td:nth-child(1):before {
+    content: "Registration No";
+  }
+
+  table td:nth-child(2):before {
+    content: "Name";
+  }
+
+  table td:nth-child(3):before {
+    content: "Room No";
+  }
+
+  table td:nth-child(4):before {
+    content: "Phone No";
+  }
+
+  table td:nth-child(5):before {
+    content: "Order ID";
+  }
+
+  table td:nth-child(6):before {
+    content: "Ordered Item";
+  }
+
+  table td:nth-child(7):before {
+    content: "Time of the Order";
+  }
+
+  table td:nth-child(8):before {
+    content: "Category";
+  }
+
+  table td:nth-child(9):before {
+    content: "Status";
+  }
+
+  table td:nth-child(10):before {
+    content: "Update Status";
+  }
+}

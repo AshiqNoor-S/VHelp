@@ -1,15 +1,56 @@
-.hero{
-    background: #C2D9FF;
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,900;1,600&family=Playfair+Display:wght@600&family=Poppins:wght@400;600&family=Red+Rose:wght@700&family=Rubik:wght@400;500;700&display=swap')
+
+.hero {
+    background: linear-gradient(90deg, rgba(167,169,255,1) 15%, rgba(142,143,250,0.9136029411764706) 51%, rgba(142,143,250,1) 89%, rgba(134,123,251,1) 100%, rgba(194,217,255,1) 100%, rgba(119,82,254,0.8015581232492998) 100%);
+    margin-bottom:8vh;
 }
 
+
 .hero-text-1 {
-    color: #190482;
-    font: bold 20px sans-serif;
+    flex-direction: column;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
     text-align: center;
     height: 100vh;
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
+}
+
+/* .hero-text-1 h1{
+    padding:2%;
+    border-radius: 2rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+} */
+
+.hero-text-1 p{
+    padding:2%;
+    border-radius:0.5rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.services-mini{
+    flex-direction: row;
+    font: bold 15px sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; 
+}
+
+.services-mini p{
+    padding:2%;
+    border-radius:0.5rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.languages {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+    flex-direction: row;
 }
 
 
@@ -24,12 +65,19 @@
   .hero-text {
     flex: 1;
     text-align: center;
+    font: bold 20px sans-serif;
     max-width: 50%; 
   }
 
-  .hero-text span{
-    color:#190482;
-    font: bold 20px sans-serif;
+  .sp1{
+    color:white;
+    font-family: "Libre Baskerville", serif;
+    font: bold 50px sans-serif;
+    font-weight: 700;
+  }
+
+  .sp2{
+    color:190482;
   }
   
   .hero-img {
@@ -55,6 +103,17 @@
   .services-txt{
     text-align: center;
   }
+
+  .services-txt p{
+    font-weight: 700;
+    margin-bottom:0;
+  }
+
+    .services-txt h1{
+        font: bold 50px sans-serif;
+        color: white;
+        margin: 0;
+    }
   
 .Services{
     display: flex;

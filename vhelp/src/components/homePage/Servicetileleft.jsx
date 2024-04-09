@@ -1,22 +1,23 @@
-import React from 'react';
-import '../styles/servicetile.css';
+import React from "react";
+import { Link } from "react-router-dom";
 
-function Servicetile() {
+function Servicetile({ serviceName, serviceDescription, animsrc }) {
   return (
     <div className="container">
       <div className='service-tile'>
         <div className='service-tile__text'>
-            <h3>Service Name</h3>
-            <p>Service Description</p>
+          <h3>{serviceName}</h3>
+          <p>{serviceDescription}</p>
+          <Link to="/mess-data">
             <a href="#" className="btn btn-primary">
-              Go somewhere
+              Get Started
             </a>
-            </div>
-            <div className='service-tile__img'>
-                <img src={process.env.PUBLIC_URL + 'img-1.png'} />
-            </div>
-            
+          </Link>
         </div>
+        <div className='service-tile__img'>
+          <lottie-player src={animsrc} background="transparent" speed="1" style={{width: 500, height: 500}} loop autoplay direction="1" mode="normal"></lottie-player>
+        </div>
+      </div>
     </div>
   );
 }

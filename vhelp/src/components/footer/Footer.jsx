@@ -15,21 +15,21 @@ const Footer = () => {
             <a href="#">Faq</a>
             <a href="#">Contact</a>
             </p>
-            <p className="footer-company-name">Company Name © 2015</p>
+            <p className="footer-company-name">VHelp © 2024</p>
         </div>
 
         <div className="footer-center">
             <div>
             <i className="fa fa-map-marker"></i>
-            <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+            <p>Vellore Institute of technology <br/> Chennai, India</p>
             </div>
             <div>
             <i className="fa fa-phone"></i>
-            <p>+1.555.555.5555</p>
+            <p>+23525324234</p>
             </div>
             <div>
             <i className="fa fa-envelope"></i>
-            <p><a href="mailto:support@company.com">support@company.com</a></p>
+                <p><a href="mailto:support@company.com">vhelp@vit.ac.in</a></p>
             </div>
         </div>
 
