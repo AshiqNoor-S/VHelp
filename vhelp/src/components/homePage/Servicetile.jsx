@@ -1,24 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import '../styles/servicetile.css';
 import { Link } from 'react-router-dom';
 
-function Servicetile({ serviceName, serviceDescription, animsrc, isLoggedIn}) {
-  const [serviceRoute, setServiceRoute] = useState("")
-  
-
-  const handleClick = (isLoggedIn) => {
-    if(!isLoggedIn) alert("Please Log In")
+function Servicetile({ serviceName, serviceDescription, animsrc }) {
+  let serviceRoute;
+  if (serviceName === 'Laundry Logistics') {
+    serviceRoute = "/laundry";
+  } else if (serviceName === 'Foodpark Ordering System') {
+    serviceRoute = "/mess-data";
   }
-
-  useEffect(() => {
-    if(isLoggedIn){
-      if (serviceName === 'Laundry Logistics') {
-        serviceRoute = "/laundry";
-      } else if (serviceName === 'Foodpark Ordering System') {
-        serviceRoute = "/mess-data";
-      }
-    }
-  }, [])
 
   return (
     <div className="container">
@@ -26,13 +16,13 @@ function Servicetile({ serviceName, serviceDescription, animsrc, isLoggedIn}) {
         <div className='service-tile__img'>
         <lottie-player src={animsrc} background="##ffffff" speed="1" style={{width: 500, height: 500}} loop autoplay direction="1" mode="normal"></lottie-player>
         </div>
-        <div className='service-tile__text right_text' onClick={() => handleClick(isLoggedIn)}>
+        <div className='service-tile__text right_text'>
           <h3>{serviceName}</h3>
           <p>{serviceDescription}</p>
           <Link to={serviceRoute}>
-            {<a href="#" className="btn btn-primary">
+            <a href="#" className="btn btn-primary">
               Get Started
-            </a>}
+            </a>
           </Link>
         </div>
       </div>

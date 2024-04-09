@@ -1,31 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
-function Servicetile({ serviceName, serviceDescription, animsrc, isLoggedIn}) {
-  const [serviceRoute, setServiceRoute] = useState("")
-  
-
-  const handleClick = (isLoggedIn) => {
-    if(!isLoggedIn) alert("Please Log In")
-  }
-
-  useEffect(() => {
-    if(isLoggedIn){
-      if (serviceName === 'Laundry Logistics') {
-        serviceRoute = "/laundry";
-      } else if (serviceName === 'Foodpark Ordering System') {
-        serviceRoute = "/mess-data";
-      }
-    }
-  }, [])
-
+function Servicetile({ serviceName, serviceDescription, animsrc }) {
   return (
     <div className="container">
       <div className='service-tile'>
-        <div className='service-tile__text' onClick={() => handleClick(isLoggedIn)}>
+        <div className='service-tile__text'>
           <h3>{serviceName}</h3>
           <p>{serviceDescription}</p>
-          <Link to={serviceRoute}>
+          <Link to="/mess">
             <a href="#" className="btn btn-primary">
               Get Started
             </a>
