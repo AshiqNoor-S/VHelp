@@ -11,14 +11,6 @@ const ChkStatus = () => {
     setRegno(e.target.value);
   };
 
-  useEffect(() => {
-    console.log(regno);
-  }, [regno]);
-
-  useEffect(() => {
-    console.log(laundryData);
-  }, [laundryData]);
-  
 
   const fetchLaundryData = async () => {
     console.log("hello")

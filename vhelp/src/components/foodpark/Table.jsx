@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/table.css';
+import { Link } from 'react-router-dom';
 
 const Table = () => {
   const [statuses, setStatuses] = useState([
@@ -53,6 +54,9 @@ const Table = () => {
           ))}
         </tbody>
       </table>
+      <div>
+        <button className="btn btn-primary"><Link to="/foodpark-menu-update">Update Menu</Link></button>
+      </div>
     </div>
   );
 }

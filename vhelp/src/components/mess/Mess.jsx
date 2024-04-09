@@ -4,20 +4,14 @@ import { db } from '../../firebase-config';
 import '../styles/mess.css';
 import { FaRegSadCry } from "react-icons/fa";
 import { IoMdHappy } from "react-icons/io";
-import MessData from './sampledata.js'
+import MessData from './sampledata.js';
+import Chart from "../mess/Chart.jsx";
+import NewChart from "../mess/NewChart.jsx";
 
 const Mess = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        // const fetchData = async () => {
-        //     // const snapshot = await getDocs(collection(db, 'MessCrowd'));
-        //     // const newData = snapshot.docs.map(doc => doc.data());
-        //     setData(data);
-        //     console.log(data);
-        // };
-        // fetchData();
-
         setData(MessData);
     }, []);
 
@@ -116,7 +110,14 @@ const Mess = () => {
                     </div>
                 </div>
             </div>
-             {/* <MessChart data={data}/> */}
+            <div>
+                <Chart/>            
+            </div>
+            <div>
+                <NewChart/>
+            </div>
+            
+            
         </div>
     );
 };

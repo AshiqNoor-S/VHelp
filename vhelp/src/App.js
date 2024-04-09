@@ -38,6 +38,7 @@ function App() {
           <Route path="/reportlost" element={<ReportLost/>}/>
           <Route path="/closelost" element={<CloseLost/>}/>
           <Route path="/chkStatus" element={<ChkStatus/>}/>
+          <Route path="/laundary-data" element={<LaundryData/>} />
         </Routes> 
         <Footer />
       </div>
