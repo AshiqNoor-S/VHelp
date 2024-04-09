@@ -40,12 +40,13 @@
     display: flex;
     flex-direction: column;
     width: 10%;
-    align-items: center;
-    justify-content: center;
     padding: 10px;
     background-color: #8E8FFA;
     border-radius: 10px;
-    margin: 10px
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .laundry__card__title{
@@ -60,6 +61,13 @@
     align-items: center;
     justify-content: center;
     border-radius: 100px;
+}
+
+.washing-machine{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
 }
 
 .laundry__card:hover{

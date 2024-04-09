@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/laundry.css'
 import LaundryCard from './LaundryCard';
 import serviceStatus from './statusicon.png'
@@ -7,8 +7,38 @@ import lost from "./lost.png"
 import report from "./report.png"
 import close from "./close.png"
 import HeroImage from "./girlHoldingLaundry.png"
+import WashingMachine from "./washingmachinejpg.jpg"
+import { auth, db } from '../../firebase-config';
+import { collection, getDocs } from 'firebase/firestore';
 
 const Laundry = () => {
+
+  const [currentUserEmail, setCurrentUserEmail] = useState('');
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    const checkAdminOrNot = async () => {
+      if (auth.currentUser) {
+        const querySnapshot = await getDocs(collection(db, 'admin'));
+        const documents = querySnapshot.docs.map(doc => doc.data());
+        console.log(documents);
+        const adminEmails = documents.map(doc => doc.email); // Assuming email is a field in your 'admin' documents
+        console.log(adminEmails);
+        if (adminEmails.includes(auth.currentUser.email)) {
+          setIsAdmin(true);
+          console.log("he")
+        }
+      }
+    };
+    checkAdminOrNot();
+
+    if (auth.currentUser) {
+      setCurrentUserEmail(auth.currentUser.email);
+    }
+    console.log("hello")
+    console.log(isAdmin)
+  }, [isAdmin]);
+
   return (
     <div className='laundry'>
       <div className='heroSection'>
@@ -22,10 +52,11 @@ const Laundry = () => {
       </div>
       <div className='services'>
         <LaundryCard serviceUrl={serviceSchedule} serviceName={"Check Schedule"}/>
-        <LaundryCard serviceUrl={serviceStatus} serviceName={"Check Status"}/>
+        {!isAdmin && <LaundryCard serviceUrl={serviceStatus} serviceName={"Check Status"}/>}
         <LaundryCard serviceUrl={lost} serviceName={"Lost and Found"}/>
-        <LaundryCard serviceUrl={report} serviceName={"Report a Lost item"}/>
-        <LaundryCard serviceUrl={close} serviceName={"Close filed opening"}/>
+        {!isAdmin && <LaundryCard serviceUrl={report} serviceName={"Report a Lost item"}/>}
+        {!isAdmin && <LaundryCard serviceUrl={close} serviceName={"Close filed opening"}/>}
+        {isAdmin && <LaundryCard serviceUrl={WashingMachine} serviceName={"Laundry Information"} />}
       </div>
     </div>
   )
