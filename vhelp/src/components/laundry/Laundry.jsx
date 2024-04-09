@@ -20,8 +20,8 @@ const Laundry = () => {
       <div className='services'>
         <LaundryCard serviceUrl={serviceSchedule} serviceName={"Check Schedule"}/>
         <LaundryCard serviceUrl={serviceStatus} serviceName={"Check Status"}/>
-        <LaundryCard serviceUrl={serviceStatus} serviceName={"Check Status"}/>
-        <LaundryCard serviceUrl={serviceSchedule} serviceName={"Check Schedule"}/>
+        <LaundryCard serviceUrl={serviceStatus} serviceName={"Lost and Found"}/>
+        <LaundryCard serviceUrl={serviceSchedule} serviceName={"Report a Lost item"}/>
         <LaundryCard serviceUrl={serviceStatus} serviceName={"Check Status"}/>
         <LaundryCard serviceUrl={serviceSchedule} serviceName={"Check Schedule"}/>
       </div>
