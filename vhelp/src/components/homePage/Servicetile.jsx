@@ -7,7 +7,7 @@ function Servicetile({ serviceName, serviceDescription, animsrc }) {
   if (serviceName === 'Laundry Logistics') {
     serviceRoute = "/laundry";
   } else if (serviceName === 'Foodpark Ordering System') {
-    serviceRoute = "/foodpark";
+    serviceRoute = "/mess-data";
   }
 
   return (

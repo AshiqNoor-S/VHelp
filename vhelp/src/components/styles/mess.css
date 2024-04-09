@@ -58,6 +58,20 @@
     z-index: 1;
 }
 
+.plot1{
+    border: #007bff 2px solid;
+    border-radius: 2rem;
+    padding: 4rem;
+    margin: 2rem;
+}
+
+.plot2{
+    border: #007bff 2px solid;
+    border-radius: 2rem;
+    padding: 9rem;
+    margin: 2rem;
+}
+
 @media (max-width: 992px) {
     .row{
         flex-direction:column;

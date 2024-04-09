@@ -8,7 +8,7 @@ function Servicetile({ serviceName, serviceDescription, animsrc }) {
         <div className='service-tile__text'>
           <h3>{serviceName}</h3>
           <p>{serviceDescription}</p>
-          <Link to="/mess-data">
+          <Link to="/mess">
             <a href="#" className="btn btn-primary">
               Get Started
             </a>
