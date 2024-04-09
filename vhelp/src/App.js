@@ -18,15 +18,22 @@ import ReportLost from './components/laundry/ReportLost';
 import CloseLost from './components/laundry/CloseLost';
 import { auth } from "../../vhelp/src/firebase-config.js";
 import ChkStatus from './components/laundry/ChkStatus';
+import { onAuthStateChanged } from 'firebase/auth';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [loading, setLoading] = useState(true); // Add loading state
 
-    useEffect(() => {
-        if(auth.currentUser != null){
-            setIsAuthenticated(true);
-        }
-    }, [])
+  useEffect(() => {
+    const unsubscribe = onAuthSta teChanged(auth, (user) => {
+      setIsAuthenticated(!!user); // Set isAuthenticated based on user existence
+      setLoading(false); // Set loading state to false after authentication check
+    });
+
+    return () => unsubscribe(); // Clean up the listener
+  }, []);
+
+  if (loading) return <div>Loading...</div>; // Show loading indicator
 
   return (
     <BrowserRouter>
