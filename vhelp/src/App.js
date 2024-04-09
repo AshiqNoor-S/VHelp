@@ -5,12 +5,9 @@ import Mess from './components/mess/Mess';
 import Laundry from './components/laundry/Laundry';
 import Footer from './components/footer/Footer';
 import LaundryData from './components/laundry/LaundryData';
-<<<<<<< HEAD
 import MessData from './components/foodpark/Table';
 import Nav from './components/header/Nav';
-=======
 import FoodParkMenuUpdate from './components/foodpark/FoodParkMenuUpdate';
->>>>>>> 40771750893fdcf4b00fa593dd009cb0b4f549c2
 
 function App() {
   return (
@@ -22,13 +19,10 @@ function App() {
           <Route path="/foodpark" element={<Foodpark />} />
           <Route path="/laundry" element={<Laundry />} />
           <Route path="/mess" element={<Mess />} />
-<<<<<<< HEAD
         <Route path="/laundry-data" element={<LaundryData/>} />
         <Route path="/mess-data" element={<MessData/>} />
-=======
           <Route path="/foodpark-menu-update" element={<FoodParkMenuUpdate  />} />
           <Route path="/laundry-data" element={<LaundryData/>} />
->>>>>>> 40771750893fdcf4b00fa593dd009cb0b4f549c2
         </Routes>
         <Footer />
       </div>
