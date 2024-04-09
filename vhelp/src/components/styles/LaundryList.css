@@ -1,0 +1,22 @@
+.laundry-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.laundry-table th, .laundry-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.laundry-table th {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.laundry-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.laundry-table tr:hover {
+    background-color: #ddd;
+}
