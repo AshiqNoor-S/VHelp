@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { db } from '../../firebase-config';
+import { db, auth } from '../../firebase-config';
 import "../styles/ReportLost.css";
 
 function ReportLost() {
@@ -22,6 +22,12 @@ function ReportLost() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        const user = auth.currentUser;
+        if (!user) {
+            console.error('User not authenticated');
+            return;
+        }
+
         const fileReader = new FileReader();
         fileReader.onload = async (e) => {
             const fileBytes = new Uint8Array(e.target.result);
@@ -36,7 +42,8 @@ function ReportLost() {
                 company: company,
                 userName: userName,
                 phoneNo: phoneNo,
-                imageUrl: imageUrl
+                imageUrl: imageUrl,
+                userId: user.uid // Add the user ID to the data
             };
 
             try {

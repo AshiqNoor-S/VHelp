@@ -30,13 +30,13 @@ const Nav = () => {
 
     return (
         <header className='navbar'>
-            <div className='navbar__title navbar__item'>V<span>Help</span></div>
+            <div className='navbar__title navbar__item'><Link to="/" style={{ textDecoration: 'none',color:'white' }}>V<span>Help</span></Link></div>
             <div className='navbar__item'>Services</div>
             <div className='navbar__item'>About Us</div>
             <div className='navbar__item'>Contact</div>
             <div className='navbar__item'>Help</div>
             {user ? (
-                <button btn btn-primary onClick={handleSignOut}>Sign Out</button>
+                <div className="navbar__item"><button className="btn btn-primary" onClick={handleSignOut}>Sign Out</button></div>
             ) : (
                 <>
                     <div className="navbar__item"><Link  to="/signup" className="btn-primary">Sign Up</Link></div>

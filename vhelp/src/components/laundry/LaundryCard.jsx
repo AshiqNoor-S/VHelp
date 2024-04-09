@@ -8,16 +8,18 @@ function LaundryCard({serviceUrl, serviceName}) {
   if (serviceName === 'Check Schedule') {
     serviceRoute = "/calendar";
   } else if (serviceName === 'Check Status') {
-    serviceRoute = "/foodpark";
+    serviceRoute = "/chkStatus";
   } else if (serviceName === 'Lost and Found'){
     serviceRoute = "/lost";
   } else if (serviceName === 'Report a Lost item'){
     serviceRoute = "/reportlost";
+  } else if (serviceName === 'Close filed opening'){
+    serviceRoute = "/closelost";
   }
 
   return (
     <div className='laundry__card'>
-      <Link to={serviceRoute}>
+      <Link to={serviceRoute} style={{ textDecoration: 'none' }}>
         <div className='laundry__card__img'>
           <img src={serviceUrl} style={{"width":"100%"}}/>
         </div>
@@ -27,4 +29,4 @@ function LaundryCard({serviceUrl, serviceName}) {
   )
 }
 
-export default LaundryCard
+export default LaundryCard;

@@ -3,6 +3,9 @@ import '../styles/laundry.css'
 import LaundryCard from './LaundryCard';
 import serviceStatus from './statusicon.png'
 import serviceSchedule from "./scheduleIcon.png"
+import lost from "./lost.png"
+import report from "./report.png"
+import close from "./close.png"
 import HeroImage from "./girlHoldingLaundry.png"
 
 const Laundry = () => {
@@ -20,10 +23,9 @@ const Laundry = () => {
       <div className='services'>
         <LaundryCard serviceUrl={serviceSchedule} serviceName={"Check Schedule"}/>
         <LaundryCard serviceUrl={serviceStatus} serviceName={"Check Status"}/>
-        <LaundryCard serviceUrl={serviceStatus} serviceName={"Lost and Found"}/>
-        <LaundryCard serviceUrl={serviceSchedule} serviceName={"Report a Lost item"}/>
-        <LaundryCard serviceUrl={serviceStatus} serviceName={"Check Status"}/>
-        <LaundryCard serviceUrl={serviceSchedule} serviceName={"Check Schedule"}/>
+        <LaundryCard serviceUrl={lost} serviceName={"Lost and Found"}/>
+        <LaundryCard serviceUrl={report} serviceName={"Report a Lost item"}/>
+        <LaundryCard serviceUrl={close} serviceName={"Close filed opening"}/>
       </div>
     </div>
   )

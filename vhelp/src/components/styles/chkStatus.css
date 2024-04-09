@@ -1,0 +1,64 @@
+
+.form {
+    margin-bottom: 20px;
+  }
+  
+  .label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .input {
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Loading message styles */
+  .loading {
+    font-style: italic;
+    color: #888;
+  }
+  
+  /* Laundry details styles */
+  .laundry-details {
+    border: 1px solid #ddd;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .status-card{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #8E8FFA;
+    border-radius: 10px;
+    margin: 10px
+  }
+  
+  .title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .label {
+    font-weight: bold;
+  }
+  
+  /* Adjust other styles as needed */
+  
