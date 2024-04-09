@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/foodpark.css';
 import DisplayItemTable from './DisplayItemTable';
+import { addDoc, collection, deleteDoc, doc, getDocs, onSnapshot, query, where } from 'firebase/firestore';
+import { db } from '../../firebase-config';
 
 function FoodParkMenuUpdate() {
   const [selectedMeal, setSelectedMeal] = useState('Breakfast');
@@ -8,16 +10,24 @@ function FoodParkMenuUpdate() {
   const [foodInputValue, setFoodInputValue] = useState('');
   const [filteredFoods, setFilteredFoods] = useState([]);
   const [addedItems, setAddedItems] = useState([]);
+  const [foodData, setFoodData] = useState([]);
 
-  const foodData = [
-    { name: "Biriyani", category: "Non Veg", price: 100 },
-    { name: "Naan", category: "Veg", price: 17 },
-    { name: "Biriyani Malabari", category: "Veg", price: 17 },
-    { name: "Biriyani chettinad", category: "Veg", price: 17 },
-    { name: "chicken tikka", category: "Veg", price: 17 },
-    { name: "chicken 65", category: "Veg", price: 17 },
-    { name: "chicken biriyani fried with apple tart", category: "Veg", price: 17 }
-  ];
+  useEffect(() => {
+    const food_data = [];
+    const collectionRef = collection(db, "FoodParkMessMenu");  
+    //const q = query(collectionRef);
+    const unsub = onSnapshot(collectionRef, (docs) => {
+      docs.forEach(((doc) => {
+        food_data.push({...doc.data(), id:doc.id});
+        setFoodData(food_data);
+      }));
+      //setCourseStore(course_Store);
+  });
+
+  return () => {
+    unsub();
+  }
+  }, [])
 
   const handleMealChange = (e) => {
     setSelectedMeal(e.target.value);
@@ -41,18 +51,37 @@ function FoodParkMenuUpdate() {
     setFilteredFoods(filtered);
   };
 
-  const addItemMenu = () => {
+  const addItemMenu = async () => {
     if (foodInputValue !== "") {
       const itemWithMealType = { ...foodInputValue, mealType: selectedMeal };
       setAddedItems([...addedItems, itemWithMealType]);
-      setInputValue(''); // Clear input value after adding
-    }
-  };
+      setInputValue('');
 
-  const removeItem = (index) => {
+      try {
+        const docRef = await addDoc(collection(db, "FoodParkAvailableMenu"), itemWithMealType);
+        console.log("Document written with ID: ", docRef.id);
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
+    }
+  };  
+
+  const removeItem = async (index) => {
     const updatedItems = [...addedItems];
+    const idToDelete = updatedItems[index].id; // Get the id stored in the document
     updatedItems.splice(index, 1);
     setAddedItems(updatedItems);
+  
+    try {
+      const q = query(collection(db, "FoodParkAvailableMenu"), where("id", "==", idToDelete));
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach(async (doc) => {
+        await deleteDoc(doc.ref);
+        console.log("Document successfully deleted!");
+      });
+    } catch (e) {
+      console.error("Error removing document: ", e);
+    }
   };
 
   return (
