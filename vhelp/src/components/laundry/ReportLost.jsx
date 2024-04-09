@@ -11,6 +11,7 @@ function ReportLost() {
     const [userName, setUserName] = useState('');
     const [phoneNo, setPhoneNo] = useState('');
     const [imageFile, setImageFile] = useState(null);
+    const [submissionStatus, setSubmissionStatus] = useState('');
 
     const handleImageUpload = (e) => {
         const file = e.target.files[0];
@@ -49,8 +50,10 @@ function ReportLost() {
             try {
                 const docRef = await addDoc(collection(db, 'lostItems'), data);
                 console.log('Document written with ID: ', docRef.id);
+                setSubmissionStatus('success');
             } catch (error) {
                 console.error('Error adding document: ', error);
+                setSubmissionStatus('error');
             }
         };
         fileReader.readAsArrayBuffer(imageFile);
@@ -92,6 +95,8 @@ function ReportLost() {
                 <br />
                 <button type="submit" className="submit-btn">Submit</button>
             </form>
+            {submissionStatus === 'success' && <p>Submitted successfully!</p>}
+            {submissionStatus === 'error' && <p>Error submitting data. Please try again.</p>}
         </div>
     );
 }

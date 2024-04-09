@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../styles/table.css';
 import { Link } from 'react-router-dom';
 import { collection, getDocs } from 'firebase/firestore';
+import { doc, updateDoc } from 'firebase/firestore';
 import { db } from '../../firebase-config';
 
 const Table = () => {
@@ -9,14 +10,31 @@ const Table = () => {
     'Cooking', 'Cooking', 'Cooking', 'Cooking'
   ]);
 
-  const handleToggleStatus = (index) => {
+  const [menuData, setMenuData] = useState([]);
+  const [loading, setLoading] = useState(true); 
+
+  const handleToggleStatus = async (index) => {
     const newStatuses = [...statuses];
     newStatuses[index] = newStatuses[index] === 'Cooking' ? 'Ready' : 'Cooking';
     setStatuses(newStatuses);
+  
+    try {
+      const querySnapshot = await getDocs(collection(db, 'orders'));
+      const documents = querySnapshot.docs.map(doc => doc.data());
+      const orderIdToUpdate = documents[index].orderId; // Assuming orderId is unique
+      await updateOrderStatus(orderIdToUpdate, newStatuses[index]);
+    } catch (error) {
+      console.error("Failed to update order status:", error);
+    }
   }
+  
+  const updateOrderStatus = async (orderId, newStatus) => {
+    const orderRef = doc(db, 'orders', orderId);
+    await updateDoc(orderRef, { status: newStatus });
+  }
+  
 
-  const [menuData, setMenuData] = useState([]);
-  const [loading, setLoading] = useState(true); 
+  
 
   useEffect(() => {
     setLoading(false); // Stop loading
