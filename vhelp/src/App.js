@@ -12,6 +12,8 @@ import Calendar from "./components/laundry/calendar";
 import SignUp from './components/auth/SignUp';
 import Login from './components/auth/Login';
 import "./components/styles/app.css"
+import Lost from './components/laundry/Lost';
+import ReportLost from './components/laundry/ReportLost';
 
 function App() {
   return (
@@ -30,7 +32,9 @@ function App() {
           <Route path ="/calendar" element={<Calendar/>} />
           <Route path="/signup" element={<SignUp/>} />
           <Route path="/login" element={<Login/>} />
-        </Routes>
+          <Route path="/lost" element={<Lost/>}/>
+          <Route path="/reportlost" element={<ReportLost/>}/>
+        </Routes> 
         <Footer />
       </div>
     </BrowserRouter>
