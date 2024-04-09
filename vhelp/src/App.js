@@ -14,6 +14,8 @@ import Login from './components/auth/Login';
 import "./components/styles/app.css"
 import Lost from './components/laundry/Lost';
 import ReportLost from './components/laundry/ReportLost';
+import CloseLost from './components/laundry/CloseLost';
+import ChkStatus from './components/laundry/ChkStatus';
 
 function App() {
   return (
@@ -34,6 +36,8 @@ function App() {
           <Route path="/login" element={<Login/>} />
           <Route path="/lost" element={<Lost/>}/>
           <Route path="/reportlost" element={<ReportLost/>}/>
+          <Route path="/closelost" element={<CloseLost/>}/>
+          <Route path="/chkStatus" element={<ChkStatus/>}/>
         </Routes> 
         <Footer />
       </div>

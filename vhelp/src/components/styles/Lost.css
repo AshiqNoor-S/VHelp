@@ -1,0 +1,45 @@
+.lost-items-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.lost-heading{
+    text-align: center;
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+.lost-item-tile {
+    border: 1px solid #ddd;
+    margin:2rem;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.lost-item-tile img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.item-details {
+    padding-top: 10px;
+}
+
+.item-details p {
+    margin: 5px 0;
+}
+
+.item-details strong {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+@media (max-width: 880px) {
+    .lost-item-tile {
+        margin:2rem;
+    }
+}
