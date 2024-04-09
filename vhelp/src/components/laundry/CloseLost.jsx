@@ -10,14 +10,19 @@ function CloseLost() {
         const fetchUserLostItems = async () => {
             const user = auth.currentUser;
             if (!user) return;
+    
+            console.log(user.uid);
+            let userUID = user.uid;
 
             const querySnapshot = await getDocs(query(collection(db, 'lostItems'), where('userId', '==', user.uid)));// Use 'user.uid' instead of 'user.userId'
 
             const items = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
             setUserLostItems(items);
         };
+    
         fetchUserLostItems();
-    }, []);
+    }, []); // Dependency array is empty to run only once on component mount
+    
 
     const handleDelete = async (itemId) => {
         try {
