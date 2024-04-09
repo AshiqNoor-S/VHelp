@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { collection, getDocs, deleteDoc, doc, where } from 'firebase/firestore'; // Import the 'where' function
+import { collection, getDocs, deleteDoc, doc, where,query } from 'firebase/firestore'; // Import the 'where' function
 import { db, auth } from '../../firebase-config';
 import '../styles/closeLost.css';
 
@@ -11,7 +11,7 @@ function CloseLost() {
             const user = auth.currentUser;
             if (!user) return;
 
-            const querySnapshot = await getDocs(collection(db, 'lostItems'), where('userId', '==', user.uid)); // Use 'user.uid' instead of 'user.userId'
+            const querySnapshot = await getDocs(query(collection(db, 'lostItems'), where('userId', '==', user.uid)));// Use 'user.uid' instead of 'user.userId'
             const items = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
             setUserLostItems(items);
         };
