@@ -36,11 +36,11 @@ const Nav = () => {
             <div className='navbar__item'>Contact</div>
             <div className='navbar__item'>Help</div>
             {user ? (
-                <button onClick={handleSignOut}>Sign Out</button>
+                <button btn btn-primary onClick={handleSignOut}>Sign Out</button>
             ) : (
                 <>
-                    <Link to="/signup" className="navbar__item">Sign Up</Link>
-                    <Link to="/login" className="navbar__item">Login</Link>
+                    <div className="navbar__item"><Link  to="/signup" className="btn-primary">Sign Up</Link></div>
+                    <div className="navbar__item"><Link  to="/login" className="btn-primary">Login</Link></div>
                 </>
             )}
         </header>

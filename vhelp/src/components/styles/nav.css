@@ -2,9 +2,20 @@ body {
     margin: 0;
 }
 
-main {
-    margin: 16px;
-}
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    padding: .4rem !important;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: .2rem;
+    margin-right: .2rem;
+    margin-bottom: 1vh;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
 
 .navbar {
     color:#190482;
@@ -12,7 +23,7 @@ main {
     align-items: center;
     font-family: Helvetica;
     font-weight: 800;
-    width: 100%;
+    flex-direction: row;
 }
 
 .navbar__title {
@@ -29,7 +40,7 @@ main {
 }
 
 .navbar__item {
-    padding: 16px 16px;
+    padding: .7rem;
     cursor: pointer;
     vertical-align: middle;
 }
