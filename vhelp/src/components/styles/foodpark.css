@@ -17,7 +17,7 @@
 .additemmenu{
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 80%;
   gap: 10px;
   margin-bottom: 10px;
 }
@@ -76,16 +76,17 @@
 }
 
 .filteredfood{
-  padding: 2px;
-  margin: 4px;
+  padding: 10px;
   color: black;
   width: 100%;
   color: black;
   border-radius: 4px;
 }
-/* foodpark.css */
 
-/* Style the table */
+.filteredfood:hover{
+  cursor: pointer;
+  background-color: #8E8FFA;
+}
 
 .addedItems{
   display: flex;
@@ -135,5 +136,15 @@ table {
 @media (max-width: 500px) {
     table{
         font-size: 12px;
+    }
+
+    .additemmenu{
+      width: 100%;
+    }
+
+    .additembutton{
+        padding: 11px;
+        width: 25%;
+        font-size: 14px;
     }
 }

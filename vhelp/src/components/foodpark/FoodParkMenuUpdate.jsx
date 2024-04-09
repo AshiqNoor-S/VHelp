@@ -24,6 +24,16 @@ function FoodParkMenuUpdate() {
       //setCourseStore(course_Store);
   });
 
+    //const q = query(collectionRef);
+    const available_food_data = [];
+    onSnapshot(collection(db, "FoodParkAvailableMenu"), (docs) => {
+      docs.forEach(((doc) => {
+        available_food_data.push({...doc.data(), id:doc.id});
+        setAddedItems(available_food_data);
+      }));
+      //setCourseStore(course_Store);
+  });
+
   return () => {
     unsub();
   }
