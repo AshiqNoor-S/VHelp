@@ -9,6 +9,8 @@ import MessData from './components/foodpark/Table';
 import Nav from './components/header/Nav';
 import FoodParkMenuUpdate from './components/foodpark/FoodParkMenuUpdate';
 import Calendar from "./components/laundry/calendar";
+import SignUp from './components/auth/SignUp';
+import Login from './components/auth/Login';
 
 function App() {
   return (
@@ -20,11 +22,13 @@ function App() {
           <Route path="/foodpark" element={<Foodpark />} />
           <Route path="/laundry" element={<Laundry />} />
           <Route path="/mess" element={<Mess />} />
-        <Route path="/laundry-data" element={<LaundryData/>} />
-        <Route path="/mess-data" element={<MessData/>} />
+          <Route path="/laundry-data" element={<LaundryData/>} />
+          <Route path="/mess-data" element={<MessData/>} />
           <Route path="/foodpark-menu-update" element={<FoodParkMenuUpdate  />} />
           <Route path="/laundry-data" element={<LaundryData/>} />
           <Route path ="/calendar" element={<Calendar/>} />
+          <Route path="/signup" element={<SignUp/>} />
+          <Route path="/login" element={<Login/>} />
         </Routes>
         <Footer />
       </div>
