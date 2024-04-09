@@ -4,13 +4,13 @@ import {getAuth} from 'firebase/auth';
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA3yMUDT9j3nC7PeFXJv0HgHP9XBgaVtdc",
-  authDomain: "vhelp-d6c0b.firebaseapp.com",
-  projectId: "vhelp-d6c0b",
-  storageBucket: "vhelp-d6c0b.appspot.com",
-  messagingSenderId: "1030058716862",
-  appId: "1:1030058716862:web:9c3b73e7aeea374693b8ef",
-  measurementId: "G-NW4GFDPXD8"
+  apiKey: "AIzaSyALnanJpKKV1aJRiYxxFHbWR2LxVkX2NX8",
+  authDomain: "vhelp-de84f.firebaseapp.com",
+  projectId: "vhelp-de84f",
+  storageBucket: "vhelp-de84f.appspot.com",
+  messagingSenderId: "196514508240",
+  appId: "1:196514508240:web:40718ba6fe4374cfd09dd5",
+  measurementId: "G-W87HPYLS59"
 };
 
 // Initialize Firebase
