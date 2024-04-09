@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 function Servicetile({ serviceName, serviceDescription, animsrc }) {
   let serviceRoute;
-  if (serviceName === 'laundry logistics') {
+  if (serviceName === 'Laundry Logistics') {
     serviceRoute = "/laundry";
-  } else if (serviceName === 'foodpark ordering system') {
+  } else if (serviceName === 'Foodpark Ordering System') {
     serviceRoute = "/foodpark";
   }
 
