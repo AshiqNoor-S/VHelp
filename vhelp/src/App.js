@@ -11,11 +11,12 @@ import FoodParkMenuUpdate from './components/foodpark/FoodParkMenuUpdate';
 import Calendar from "./components/laundry/calendar";
 import SignUp from './components/auth/SignUp';
 import Login from './components/auth/Login';
+import "./components/styles/app.css"
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="App" style={{ background: 'linear-gradient(90deg, rgba(167, 169, 255, 1) 15%, rgba(142, 143, 250, 0.9136029411764706) 51%, rgba(142, 143, 250, 1) 89%, rgba(134, 123, 251, 1) 100%, rgba(194, 217, 255, 1) 100%, rgba(119, 82, 254, 0.8015581232492998) 100%)' }}>
+      <div className="App" style={{ background: 'linear-gradient(90deg, rgba(167, 169, 255, 1) 15%, rgba(142, 143, 250, 0.9136029411764706) 51%, rgba(142, 143, 250, 1) 89%, rgba(134, 123, 251, 1) 100%, rgba(194, 217, 255, 1) 100%, rgba(119, 82, 254, 0.8015581232492998) 100%)'}}>
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />

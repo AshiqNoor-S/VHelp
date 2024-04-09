@@ -12,6 +12,7 @@ main {
     align-items: center;
     font-family: Helvetica;
     font-weight: 800;
+    width: 100%;
 }
 
 .navbar__title {

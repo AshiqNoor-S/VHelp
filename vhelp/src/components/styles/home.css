@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,900;1,600&family=Playfair+Display:wght@600&family=Poppins:wght@400;600&family=Red+Rose:wght@700&family=Rubik:wght@400;500;700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,900;1,600&family=Playfair+Display:wght@600&family=Poppins:wght@400;600&family=Red+Rose:wght@700&family=Rubik:wght@400;500;700&display=swap');
 
 .hero {
     background: linear-gradient(90deg, rgba(167,169,255,1) 15%, rgba(142,143,250,0.9136029411764706) 51%, rgba(142,143,250,1) 89%, rgba(134,123,251,1) 100%, rgba(194,217,255,1) 100%, rgba(119,82,254,0.8015581232492998) 100%);
     margin-bottom:8vh;
+    width: 100%;
 }
 
 
