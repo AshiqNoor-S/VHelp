@@ -8,6 +8,7 @@ import LaundryData from './components/laundry/LaundryData';
 import MessData from './components/foodpark/Table';
 import Nav from './components/header/Nav';
 import FoodParkMenuUpdate from './components/foodpark/FoodParkMenuUpdate';
+import Calendar from "./components/laundry/calendar";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/mess-data" element={<MessData/>} />
           <Route path="/foodpark-menu-update" element={<FoodParkMenuUpdate  />} />
           <Route path="/laundry-data" element={<LaundryData/>} />
+          <Route path ="/calendar" element={<Calendar/>} />
         </Routes>
         <Footer />
       </div>
