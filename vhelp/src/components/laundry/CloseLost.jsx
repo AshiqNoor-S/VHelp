@@ -11,7 +11,10 @@ function CloseLost() {
             const user = auth.currentUser;
             if (!user) return;
 
-            const querySnapshot = await getDocs(collection(db, 'lostItems'), where('userId', '==', user.uid)); // Use 'user.uid' instead of 'user.userId'
+            console.log(user.id)
+
+            const querySnapshot = await getDocs(collection(db, 'lostItems'), where('userId', '==', user.id)); // Use 'user.uid' instead of 'user.userId'
+            console.log(querySnapshot.docs);
             const items = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
             setUserLostItems(items);
         };
