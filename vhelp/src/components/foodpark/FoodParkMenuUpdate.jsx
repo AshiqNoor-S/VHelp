@@ -25,10 +25,10 @@ function FoodParkMenuUpdate() {
   });
 
     //const q = query(collectionRef);
-    const available_food_data = [];
     onSnapshot(collection(db, "FoodParkAvailableMenu"), (docs) => {
+      const available_food_data = [];
       docs.forEach(((doc) => {
-        available_food_data.push({...doc.data(), id:doc.id});
+        available_food_data.push({...doc.data()});
         setAddedItems(available_food_data);
       }));
       //setCourseStore(course_Store);
@@ -79,6 +79,7 @@ function FoodParkMenuUpdate() {
   const removeItem = async (index) => {
     const updatedItems = [...addedItems];
     const idToDelete = updatedItems[index].id; // Get the id stored in the document
+    console.log(updatedItems)
     updatedItems.splice(index, 1);
     setAddedItems(updatedItems);
   
