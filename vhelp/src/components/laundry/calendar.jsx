@@ -16,8 +16,8 @@ const calendar = () => {
         <li><time dateTime="2024-04-06">6</time>601-701</li>
         <li><time dateTime="2024-04-07">7</time>701-801</li>
         <li><time dateTime="2024-04-08">8</time>801-901</li>
-        <li className="today"><time dateTime="2024-04-09">9</time>901-1001</li>
-        <li><time dateTime="2024-04-10">10</time>1001-1101</li>
+        <li ><time dateTime="2024-04-09">9</time>901-1001</li>
+        <li className="today"><time dateTime="2024-04-10">10</time>1001-1101</li>
         <li><time dateTime="2024-04-11">11</time>1101-1201</li>
         <li><time dateTime="2024-04-12">12</time>1201-1301</li>
         <li><time dateTime="2024-04-13">13</time>1301-1401</li>

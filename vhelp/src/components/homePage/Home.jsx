@@ -84,8 +84,7 @@ const Home = () => {
                         animsrc="https://lottie.host/90b0d1d0-61f6-460a-8d31-d5d805abbb3f/ZBp9qYJzEY.json"
                     />
                     <Servicetileleft
-                        serviceName="Mess Navigator
-                        "
+                        serviceName="Mess Navigator"
                         serviceDescription="Our Mess Navigator service epitomizes culinary convenience, employing sophisticated analytics to demystify the dining hall’s ebb and flow. This predictive tool empowers you to dine at your leisure, circumventing the crescendo of daily rushes with data-driven precision. Enjoy the solace of serene dining halls and the companionship of fellow scholars at your convenience, transforming each meal into an oasis of tranquility.
                         "
                         animsrc="https://lottie.host/3ea4c31b-00a6-48e2-89a0-0cb103c52cfb/g3VDmdnAAI.json"
@@ -95,6 +94,12 @@ const Home = () => {
                         serviceDescription="The Gourmet Gateway offers a curated portal to the hostel's culinary delights, marrying convenience with gastronomic pleasure. Delve into the day's menu with anticipatory delight, selecting from an array of dishes that cater to both whimsical cravings and nutritional needs. Upon selection, a bespoke token is generated, streamlining the collection process for a harmonious blend of efficiency and satisfaction. It’s not merely food ordering; it’s your passport to a world of culinary exploration, right at your fingertips.
                         "
                         animsrc="https://lottie.host/e5ec5ede-b04b-4d32-ae6f-8e39ca1a0401/D8Nchtcm10.json"
+                    />
+                    <Servicetileleft
+                        serviceName="Notice Board"
+                        serviceDescription="View all information regarding hostel and campus digitally with ease
+                        "
+                        animsrc="https://lottie.host/4e06a258-b8e6-4bf3-b82d-50eb338c1812/RqZGK5ysVi.json"
                     />
                 </div>
             </div>
