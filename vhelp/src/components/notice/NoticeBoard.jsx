@@ -4,7 +4,9 @@ import '../styles/notice.css'
 function NoticeBoard({ pdfFiles }) {
     return (
         <div className=''>
+            <div className='notice-title'>
             <h2>Notice Board</h2>
+            </div>
             <div className="pdf-grid">
                 {pdfFiles.map((file, index) => (
                     <div key={index} className="pdf-item">

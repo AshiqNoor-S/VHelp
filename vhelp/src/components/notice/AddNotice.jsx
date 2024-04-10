@@ -3,6 +3,7 @@ import { auth, db, storage } from '../../firebase-config.js';
 import { getDocs, collection } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL, listAll } from 'firebase/storage';
 import NoticeBoard from './NoticeBoard';
+import "../styles/notice.css"
 
 function AddNotice() {
     const [currentUserEmail, setCurrentUserEmail] = useState('');
@@ -64,9 +65,12 @@ function AddNotice() {
 
     return (
         <div>
+            <div className='notice-title'>
             <h1>Add Notice</h1>
+            </div>
+            
             {isAdmin && (
-                <div>
+                <div className='up'>
                     <input type="file" id="fileInput" accept=".pdf" onChange={handleFileSelect} multiple />
                     {uploading && <div>Uploading...</div>}
                 </div>

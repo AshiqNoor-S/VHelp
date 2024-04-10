@@ -47,6 +47,8 @@ body {
     vertical-align: middle;
 }
 
+
+
 @media (max-width: 880px) {
     .navbar{
         flex-direction:column;

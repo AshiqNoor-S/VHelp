@@ -17,3 +17,27 @@
     width: 100%; /* Make PDFs fill their container */
     height: 100%; /* Make PDFs fill their container */
 }
+
+.notice-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notice-title h1{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.notice-title h2{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.up{
+    text-align: center;
+    padding:2%;
+}
+
