@@ -20,6 +20,7 @@ import { auth } from "../../vhelp/src/firebase-config.js";
 import ChkStatus from './components/laundry/ChkStatus';
 import { onAuthStateChanged } from 'firebase/auth';
 import DownloadApp from './components/Download App/DownloadApp.jsx';
+import AddNotice from './components/notice/AddNotice.jsx';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -58,6 +59,7 @@ function App() {
           <Route path="/chkStatus" element={<ChkStatus/>}/>
           <Route path="/laundary-data" element={isAuthenticated ? <LaundryData/> : <Navigate to="/"/>}/>
           <Route path="/download-app" element={<DownloadApp/>}/>
+          <Route path="/board" element={<AddNotice/>}/>
         </Routes> 
         <Footer />
       </div>
