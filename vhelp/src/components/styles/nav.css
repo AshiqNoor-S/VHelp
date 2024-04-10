@@ -18,6 +18,9 @@ body {
   }
 
 .navbar {
+    padding:2rem;
+    padding-bottom:0;
+    padding-top: 0;
     color:#190482;
     display: flex;
     align-items: center;
@@ -28,7 +31,6 @@ body {
 
 .navbar__title {
     margin-right: auto;
-    font-size: 150%;
     padding: 12px 16px;
     color:  #ffffff;
 	font: normal 36px 'Open Sans', cursive;

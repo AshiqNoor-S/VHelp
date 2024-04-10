@@ -30,7 +30,7 @@ const Nav = () => {
 
     return (
         <header className='navbar'>
-            <div className='navbar__title navbar__item'><Link to="/" style={{ textDecoration: 'none',color:'white' }}>V<span>Help</span></Link></div>
+            <div className='navbar__title navbar__item'><Link to="/" style={{ textDecoration: 'none',color:'white',fontWeight:'bold' }}>V<span>Help</span></Link></div>
             <div className='navbar__item'>Services</div>
             <div className='navbar__item'>About Us</div>
             <div className='navbar__item'>Contact</div>

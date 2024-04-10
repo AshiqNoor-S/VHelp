@@ -1,17 +1,18 @@
 /* ReportLost.css */
 
 .report-lost {
-    max-width: 500px;
+    max-width: 50vw;
     margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom:20px;
+    border: 1px solid #C2D9FF;
     border-radius: 5px;
 }
 
 .input-field {
     width: 100%;
     margin-bottom: 10px;
-    padding: 5px;
+    padding: 2px;
     border: 1px solid #ccc;
     border-radius: 3px;
 }
@@ -28,3 +29,56 @@
 .submit-btn:hover {
     background-color: #0056b3;
 }
+
+
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.lost-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    font-size: 2rem;
+}
+
+.lost-heading h2{
+    width:50vw;
+}
+
+.input-field {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.submit-btn {
+    background-color: #7752FE;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #8E8FFA;
+}
+
+

@@ -61,40 +61,44 @@ function ReportLost() {
 
     return (
         <div className="report-lost">
-            <h2>Report Lost Item</h2>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Image:
-                    <input type="file" onChange={handleImageUpload} />
-                </label>
-                <br />
-                <label>
-                    Item Name:
-                    <input type="text" className="input-field" value={imageName} onChange={(e) => setImageName(e.target.value)} />
-                </label>
-                <br />
-                <label>
-                    Found Date:
-                    <input type="date" className="input-field" value={foundDate} onChange={(e) => setFoundDate(e.target.value)} />
-                </label>
-                <br />
-                <label>
-                    Company:
-                    <input type="text" className="input-field" value={company} onChange={(e) => setCompany(e.target.value)} />
-                </label>
-                <br />
-                <label>
-                    Your Name:
-                    <input type="text" className="input-field" value={userName} onChange={(e) => setUserName(e.target.value)} />
-                </label>
-                <br />
-                <label>
-                    Your Phone Number:
-                    <input type="text" className="input-field" value={phoneNo} onChange={(e) => setPhoneNo(e.target.value)} />
-                </label>
-                <br />
-                <button type="submit" className="submit-btn">Submit</button>
-            </form>
+            <div className='lost-heading'>
+                <h2>Report Lost Item</h2>
+            </div>
+            
+            <form className="form-container" onSubmit={handleSubmit}>
+    <label className="form-label">
+        Image:
+        <input type="file" className="input-field" onChange={handleImageUpload} />
+    </label>
+    <br />
+    <label className="form-label">
+        Item Name:
+        <input type="text" className="input-field" value={imageName} onChange={(e) => setImageName(e.target.value)} />
+    </label>
+    <br />
+    <label className="form-label">
+        Found Date:
+        <input type="date" className="input-field" value={foundDate} onChange={(e) => setFoundDate(e.target.value)} />
+    </label>
+    <br />
+    <label className="form-label">
+        Company:
+        <input type="text" className="input-field" value={company} onChange={(e) => setCompany(e.target.value)} />
+    </label>
+    <br />
+    <label className="form-label">
+        Your Name:
+        <input type="text" className="input-field" value={userName} onChange={(e) => setUserName(e.target.value)} />
+    </label>
+    <br />
+    <label className="form-label">
+        Your Phone Number:
+        <input type="text" className="input-field" value={phoneNo} onChange={(e) => setPhoneNo(e.target.value)} />
+    </label>
+    <br />
+    <button type="submit" className="submit-btn">Submit</button>
+</form>
+
             {submissionStatus === 'success' && <p>Submitted successfully!</p>}
             {submissionStatus === 'error' && <p>Error submitting data. Please try again.</p>}
         </div>
