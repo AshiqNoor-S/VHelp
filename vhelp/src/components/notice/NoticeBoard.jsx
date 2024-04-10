@@ -1,13 +1,16 @@
 import React from 'react';
+import '../styles/notice.css'
 
 function NoticeBoard({ pdfFiles }) {
     return (
-        <div>
+        <div className=''>
             <h2>Notice Board</h2>
             <div className="pdf-grid">
                 {pdfFiles.map((file, index) => (
                     <div key={index} className="pdf-item">
-                        <img src={`https://pdf-thumbnail-url.com/${file.name}`} alt={file.name} />
+                        <div className="pdf-container">
+                            <embed src={file.url} type="application/pdf" />
+                        </div>
                         <p>{file.name}</p>
                     </div>
                 ))}

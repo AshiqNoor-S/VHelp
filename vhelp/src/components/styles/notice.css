@@ -1,0 +1,19 @@
+.pdf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust column width as needed */
+    gap: 20px; /* Adjust gap between PDFs */
+}
+
+.pdf-item {
+    text-align: center; /* Align PDFs to center */
+}
+
+.pdf-container {
+    width: 100%; /* Ensure container fills the available width */
+    height: 600px; /* Set a fixed height for the container */
+}
+
+.pdf-container embed {
+    width: 100%; /* Make PDFs fill their container */
+    height: 100%; /* Make PDFs fill their container */
+}

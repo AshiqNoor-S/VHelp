@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { auth, db } from '../../firebase-config';
+import { auth, db, storage } from '../../firebase-config.js';
 import { getDocs, collection } from 'firebase/firestore';
-import { getStorage, ref, uploadBytes, getDownloadURL, listAll } from 'firebase/storage';
+import { ref, uploadBytes, getDownloadURL, listAll } from 'firebase/storage';
 import NoticeBoard from './NoticeBoard';
-import { Document, Page } from 'react-pdf'; // Import PDF viewer components
 
 function AddNotice() {
     const [currentUserEmail, setCurrentUserEmail] = useState('');
@@ -17,6 +16,7 @@ function AddNotice() {
             if (user) {
                 setCurrentUserEmail(user.email);
                 checkAdminOrNot(user.email);
+                fetchAllPdfs(); // Fetch PDFs when user is authenticated
             } else {
                 setCurrentUserEmail('');
                 setIsAdmin(false);
@@ -25,13 +25,8 @@ function AddNotice() {
         });
 
         return () => unsubscribe();
-    }, []);
 
-    useEffect(() => {
-        if (!isAdmin) {
-            fetchAllPdfs();
-        }
-    }, [isAdmin]);
+    }, []);
 
     const checkAdminOrNot = async (email) => {
         const querySnapshot = await getDocs(collection(db, 'admin'));
@@ -43,8 +38,6 @@ function AddNotice() {
         setLoading(false);
     };
 
-    const storage = getStorage();
-
     const handleFileSelect = async (event) => {
         const files = event.target.files;
 
@@ -53,6 +46,7 @@ function AddNotice() {
             const file = files[i];
             if (file.type === 'application/pdf') {
                 const storageRef = ref(storage, `pdfs/${file.name}`);
+
                 await uploadBytes(storageRef, file);
                 const downloadURL = await getDownloadURL(storageRef);
                 setPdfFiles((prevFiles) => [...prevFiles, { name: file.name, url: downloadURL }]);
@@ -75,24 +69,6 @@ function AddNotice() {
                 <div>
                     <input type="file" id="fileInput" accept=".pdf" onChange={handleFileSelect} multiple />
                     {uploading && <div>Uploading...</div>}
-                    <div>
-                        {pdfFiles.map((file, index) => (
-                            <div key={index}>
-                                <Document file={file.url}>
-                                    <Page pageNumber={1} />
-                                </Document>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            )}
-            {!isAdmin && (
-                <div>
-                    {pdfFiles.map((file, index) => (
-                        <div key={index}>
-                            <a href={file.url} target="_blank" rel="noopener noreferrer">{file.name}</a>
-                        </div>
-                    ))}
                 </div>
             )}
             <NoticeBoard pdfFiles={pdfFiles} />
