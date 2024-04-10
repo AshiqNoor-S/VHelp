@@ -1,0 +1,9 @@
+.download-app{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.download-app-text{
+    font-size: 30px;
+}

@@ -19,6 +19,7 @@ import CloseLost from './components/laundry/CloseLost';
 import { auth } from "../../vhelp/src/firebase-config.js";
 import ChkStatus from './components/laundry/ChkStatus';
 import { onAuthStateChanged } from 'firebase/auth';
+import DownloadApp from './components/Download App/DownloadApp.jsx';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -56,6 +57,7 @@ function App() {
           <Route path="/closelost" element={<CloseLost/>}/>
           <Route path="/chkStatus" element={<ChkStatus/>}/>
           <Route path="/laundary-data" element={isAuthenticated ? <LaundryData/> : <Navigate to="/"/>}/>
+          <Route path="/download-app" element={<DownloadApp/>}/>
         </Routes> 
         <Footer />
       </div>
