@@ -12,7 +12,7 @@ function Servicetile({ serviceName, serviceDescription, animsrc }) {
   const [serviceRoute, setServiceRoute] = useState("");
 
   useEffect(() => {
-    if(!isAdmin){
+    if(isAdmin){
       if (serviceName === 'Laundry Logistics') {
         setServiceRoute("/laundry");
       } else if (serviceName === 'Foodpark Ordering System') {

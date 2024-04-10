@@ -18,7 +18,7 @@ function Lost() {
     return (
         <div>
             <div className="lost-heading">
-                <h2>Lost Items</h2>
+                <div className='lost-heading-title'>Lost Items</div>
             </div>
             
             <div className="lost-items-container">
